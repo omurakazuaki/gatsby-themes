@@ -8,7 +8,6 @@ const Container = styled.div`
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
 `;
 
 const Nav = styled.aside`
@@ -20,14 +19,13 @@ const Nav = styled.aside`
 `;
 
 const Main = styled.div`
-  max-width: 75%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 `;
 
 const Content = styled.div`
-  width: 100%;
+  width: calc(75% - 64px);
   padding-right: 64px;
   padding-top: 32px;
 `;
@@ -41,21 +39,30 @@ const Index = styled.aside`
 `;
 
 const SiteName = styled.h1`
+  color: #6d2f9c;
   font-size: 20px;
   font-weight: 900;
   text-decoration: none;
   padding: 16px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const Logo = styled.img`
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
 `;
 
 const NavList = styled.ul`
-  color: #6C6C80;
+  color: #b0b0bb;
   padding-inline-start: 4px;
 `;
 
 const NavSection = styled.li`
   color: #3D3D4D;
   text-transform: uppercase;
-  font-size: 14px;
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -79,6 +86,7 @@ export {
   Content,
   Index,
   SiteName,
+  Logo,
   NavList,
   NavSection,
   NavItem,

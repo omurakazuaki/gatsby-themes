@@ -8,10 +8,11 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import "modern-css-reset"
-import "./layout.css"
 
-import { Container, Main, Nav, SiteName, NavList, NavSection, NavItem } from "./styled"
+import "./layout.css"
+import logo from "../images/gatsby-icon.png"
+
+import { Container, Main, Nav, SiteName, Logo, NavList, NavSection, NavItem } from "./styled"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -73,7 +74,7 @@ const Layout = ({ children }) => {
               padding: 8
             }}
             activeStyle={{
-              color: '#8257E6',
+              color: '#6d2f9c',
               backgroundColor: '#F2F2FA'
             }}
           >
@@ -84,7 +85,7 @@ const Layout = ({ children }) => {
       return (
         <div key={node.dir}>
           { node.dir ? <NavSection>{node.dir}</NavSection> : <></>}
-          <NavList >
+          <NavList>
             {Object.keys(node)
               .filter(key=>key != 'dir')
               .map(key=>node[key])
@@ -103,6 +104,7 @@ const Layout = ({ children }) => {
     <Container>
       <Nav>
         <SiteName>
+          <Logo src={logo} width={24} />
           <Link to="/">{data.site.siteMetadata.title}</Link>
         </SiteName>
         { PageList(indexTree) }
