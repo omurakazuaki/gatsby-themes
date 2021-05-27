@@ -1,0 +1,12 @@
+body {
+  color: #3D3D4D;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+}

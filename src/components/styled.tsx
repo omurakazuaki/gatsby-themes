@@ -11,7 +11,7 @@ const Container = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, Verdana, Meiryo, "M+ 1p", sans-serif;
 `;
 
-const Nav = styled.nav`
+const Nav = styled.aside`
   position: sticky;
   top: 0;
   overflow-y: auto;
@@ -40,11 +40,48 @@ const Index = styled.aside`
   padding-top: 32px;
 `;
 
+const SiteName = styled.h1`
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: none;
+  padding: 16px 0;
+`;
+
+const NavList = styled.ul`
+  color: #6C6C80;
+  padding-inline-start: 4px;
+`;
+
+const NavSection = styled.li`
+  color: #3D3D4D;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+const NavItem = styled.li`
+`;
+
+const PageIndex = styled.h2`
+  color: #3D3D4D;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 64px;
+`;
+
 export {
   Container,
   Nav,
   Main,
   Content,
-  Index
+  Index,
+  SiteName,
+  NavList,
+  NavSection,
+  NavItem,
+  PageIndex
 };
 

@@ -9,8 +9,9 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import "modern-css-reset"
+import "./layout.css"
 
-import { Container, Main, Nav } from "./styled"
+import { Container, Main, Nav, SiteName, NavList, NavSection, NavItem } from "./styled"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -40,20 +41,71 @@ const Layout = ({ children }) => {
     }
   `);
 
-  // TODO : get index from graphql
-  const edges = data.allMdx.edges;
+  const indexTree = data.allMdx.edges.reduce((tree, {node}) => {
+    const path = node.fields.slug.split('/').filter(v=>v.length > 0);
+    let current = tree;
+    while (path.length) {
+      const dir = path.shift();
+      if (path.length) {
+        if (current[dir] == undefined) {
+          current[dir] = {dir};
+        }
+      } else {
+        current[dir] = {
+          dir,
+          isLeaf: true,
+          slug: node.fields.slug,
+          title: node.frontmatter.title
+        };
+      }
+      current = current[dir];
+    }
+    return tree;
+  }, {});
+
+  const PageList = (node) => {
+    if (node.isLeaf) {
+      return (
+        <NavItem key={node.slug}>
+          <Link to={node.slug}
+            style={{
+              display: 'flex',
+              padding: 8
+            }}
+            activeStyle={{
+              color: '#8257E6',
+              backgroundColor: '#F2F2FA'
+            }}
+          >
+          {node.title}
+          </Link>
+        </NavItem>);
+    } else {
+      return (
+        <div key={node.dir}>
+          { node.dir ? <NavSection>{node.dir}</NavSection> : <></>}
+          <NavList >
+            {Object.keys(node)
+              .filter(key=>key != 'dir')
+              .map(key=>node[key])
+              .sort((a, b) => {
+                if (a.isLeaf && !b.isLeaf) return -1;
+                if (!a.isLeaf && b.isLeaf) return 1;
+                return a.dir.localeCompare(b.dir);
+              })
+              .map(newNode=>PageList(newNode))}
+          </NavList>
+        </div>);
+    }
+  };
 
   return (
     <Container>
       <Nav>
-        <h1>{data.site.siteMetadata.title}</h1>
-        <ul>
-          {edges.map(item => (
-            <Link key={item.node.fields.slug} to={item.node.fields.slug}>
-              <li>{item.node.frontmatter.title}</li>
-            </Link>
-          ))}
-        </ul>
+        <SiteName>
+          <Link to="/">{data.site.siteMetadata.title}</Link>
+        </SiteName>
+        { PageList(indexTree) }
       </Nav>
       <Main>
         {children}

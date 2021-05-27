@@ -2,7 +2,7 @@ import * as React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Content, Index } from "../components/styled"
+import { Content, Index, PageIndex } from "../components/styled"
 
 export default function Doc({children}) {
   return (
@@ -12,7 +12,7 @@ export default function Doc({children}) {
       {children}
     </Content>
     <Index>
-      Index
+      <PageIndex>INDEX</PageIndex>
       Todo
     </Index>
   </Layout>)
