@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
               padding: 8
             }}
             activeStyle={{
-              color: '#6d2f9c',
+              color: '#663399',
               backgroundColor: '#F2F2FA'
             }}
           >

@@ -39,7 +39,7 @@ const Index = styled.aside`
 `;
 
 const SiteName = styled.h1`
-  color: #6d2f9c;
+  color: #663399;
   font-size: 20px;
   font-weight: 900;
   text-decoration: none;
@@ -61,7 +61,7 @@ const NavList = styled.ul`
 `;
 
 const NavSection = styled.li`
-  color: #3D3D4D;
+  color: #663399;
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 10px;
