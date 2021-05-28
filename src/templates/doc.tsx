@@ -30,7 +30,7 @@ export default function Doc({children, pageContext}) {
 
   useEffect(() => {
     Prism.highlightAll();
-  });
+  }, []);
 
   return (
     <Layout>

@@ -2,20 +2,20 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 280px calc(100% - 320px);
+  grid-template-columns: 256px calc(100% - 256px);
   grid-auto-flow: row;
-  grid-gap: 40px;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1800px;
 `;
 
 const Nav = styled.aside`
   position: sticky;
   top: 0;
   overflow-y: auto;
+  background-color: rgb(242, 242, 250);
   height: calc(100vh - 32px);
   padding-top: 32px;
+  padding-left: 32px;
 `;
 
 const Main = styled.div`
@@ -25,9 +25,11 @@ const Main = styled.div`
 `;
 
 const Content = styled.div`
-  width: calc(75% - 64px);
-  padding-right: 64px;
-  padding-top: 32px;
+  width: 75%;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
 `;
 
 const Index = styled.aside`
@@ -35,7 +37,6 @@ const Index = styled.aside`
   position: sticky;
   top: 0;
   height: calc(100vh - 32px);
-  padding-top: 32px;
 `;
 
 const SiteName = styled.h1`
@@ -56,7 +57,6 @@ const Logo = styled.img`
 `;
 
 const NavList = styled.ul`
-  color: #b0b0bb;
   padding-inline-start: 4px;
 `;
 

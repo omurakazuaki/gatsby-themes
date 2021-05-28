@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
             }}
             activeStyle={{
               color: '#663399',
-              backgroundColor: '#F2F2FA'
+              backgroundColor: '#fff'
             }}
           >
           {node.title}
