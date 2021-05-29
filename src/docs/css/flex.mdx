@@ -3,349 +3,86 @@ title: Flex
 ---
 
 ## flex-wrap
+フレックスアイテムを単一行に押し込むか、あるいは複数行に折り返してもよいかを指定。
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-      width: 500px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex; flex-wrap: wrap;">
-    <div style="flex: 1 1 150px;">1</div>
-    <div style="flex: 1 1 150px;">2</div>
-    <div style="flex: 1 1 150px;">3</div>
-    <div style="flex: 1 1 150px;">4</div>
-    <div style="flex: 1 1 150px;">5</div>
-  </div>`}/>
-
-```html
-<div style="display: flex; flex-wrap: wrap;">
-  <div style="flex: 1 1 150px;">1</div>
-  <div style="flex: 1 1 150px;">2</div>
-  <div style="flex: 1 1 150px;">3</div>
-  <div style="flex: 1 1 150px;">4</div>
-  <div style="flex: 1 1 150px;">5</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex flex=wrap" src="https://codepen.io/omurakazuaki/embed/rNyGbKY?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/rNyGbKY'>Flex flex=wrap</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## flex-grow
+レックスアイテムの主軸方向の寸法のフレックス伸長係数を設定。
+すべての兄弟アイテムが同じフレックス伸長係数であった場合、すべてのアイテムには残りの空間が等しく割り当てられ、そうでなければ定義されたそれぞれフレックス伸長係数の比率に従って配分。
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body {
-      margin: 0
-    }
-    body>div {
-      width: 500px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex">
-    <div style="flex-grow: 0">1</div>
-    <div style="flex-grow: 1">2</div>
-    <div style="flex-grow: 2">3</div>
-  </div>`}/>
-
-```html
-<div style="display: flex">
-  <div style="flex-grow: 0">1</div>
-  <div style="flex-grow: 1">2</div>
-  <div style="flex-grow: 2">3</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex flex-grow" src="https://codepen.io/omurakazuaki/embed/poeWBXr?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/poeWBXr'>Flex flex-grow</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## flex-shrink
+フレックスアイテムの縮小係数を設定。
+すべてのフレックスアイテムの寸法がフレックスコンテナーよりも大きい場合、アイテムは flex-shrink の数値に従って縮小。
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body {
-      margin: 0
-    }
-    body>div {
-      width: 500px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex">
-    <div style="flex-shrink: 0; width: 200px;">1</div>
-    <div style="flex-shrink: 1; width: 200px;">2</div>
-    <div style="flex-shrink: 2; width: 200px;">3</div>
-  </div>`}/>
-
-```html
-<div style="display: flex">
-  <div style="flex-shrink: 0; width: 200px;">1</div>
-  <div style="flex-shrink: 1; width: 200px;">2</div>
-  <div style="flex-shrink: 2; width: 200px;">3</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex flex-shrink" src="https://codepen.io/omurakazuaki/embed/LYWzoPa?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/LYWzoPa'>Flex flex-shrink</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## flex-direction
+主軸の方向や向き (通常または逆方向) を定義することにより、フレックスコンテナー内でフレックスアイテムを配置する方法を設定。
 
-<iframe style={{border: 'none', width: '100%', resize: 'both', height: '650px'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex; flex-direction: row">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  <div style="display: flex; flex-direction: row-reverse">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  <div style="display: flex; flex-direction: column">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  <div style="display: flex; flex-direction: column-reverse">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>
-  `}/>
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex flex-direction" src="https://codepen.io/omurakazuaki/embed/YzZrbqz?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/YzZrbqz'>Flex flex-direction</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
+### row
+行のテキストの方向に配置
 
-```html
-<div style="display: flex; flex-direction: row">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-<div style="display: flex; flex-direction: row-reverse">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-<div style="display: flex; flex-direction: column">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-<div style="display: flex; flex-direction: column-reverse">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+### row-reverse
+rowの逆向き
+
+### column
+積み重なるように配置する
+
+### column-reverse
+columnの逆向き
 
 ## justify-content
 フレックスコンテナーの主軸およびグリッドコンテナーのインライン軸に沿って、中身のアイテムの間や周囲に間隔を配置する方法を定義
 
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex justify-content" src="https://codepen.io/omurakazuaki/embed/bGqoyYr?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/bGqoyYr'>Flex justify-content</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ### center
 
 アイテムを中央に寄せる
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex; justify-content: center">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: flex; justify-content: center">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
 
 ### space-between
 
 各アイテムを均等に配置し最初のアイテムは先頭に寄せ、最後のアイテムは末尾に寄せる
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex; justify-content: space-between">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: flex; justify-content: space-between">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
 
 ### space-around
 
 各アイテムを均等に配置し各アイテムの両側に半分の大きさの間隔を置く
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex; justify-content: space-around">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: flex; justify-content: space-around">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
 
 ### space-evenly
 
 各アイテムを均等に配置する
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex; justify-content: space-evenly">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: flex; justify-content: space-evenly">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
 
 ## margin
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex">
-    <div style="margin-right: auto">1</div>
-    <div>2</div>
-    <div>3</div>
-    <div style="margin-left: auto">4</div>
-  </div>`}/>
-
-```html
-<div style="display: flex">
-  <div style="margin-right: auto">1</div>
-  <div>2</div>
-  <div>3</div>
-  <div style="margin-left: auto">>4</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex margin" src="https://codepen.io/omurakazuaki/embed/YzZrbjq?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/YzZrbjq'>Flex margin</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## order
+レックスコンテナーやグリッドコンテナーの中で、アイテムを並べる順序を設定。
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: flex;">
-    <div style="order: 4">1</div>
-    <div style="order: 3">2</div>
-    <div style="order: 2">3</div>
-    <div style="order: 1">4</div>
-  </div>`}/>
-
-```html
-<div style="display: flex;">
-  <div style="order: 4">1</div>
-  <div style="order: 3">2</div>
-  <div style="order: 2">3</div>
-  <div style="order: 1">4</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Flex order" src="https://codepen.io/omurakazuaki/embed/JjWrQoG?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/JjWrQoG'>Flex order</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
