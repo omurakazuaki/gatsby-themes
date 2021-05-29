@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import "./layout.css"
-import logo from "../images/gatsby-icon.png"
 
-import { Container, Main, Nav, SiteName, Logo, NavList, NavSection, NavItem } from "./styled"
+import { Container, Main, Nav, Header, NavList, NavSection, NavItem } from "./styled"
+import Logo from './logo';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -100,13 +100,17 @@ const Layout = ({ children }) => {
     }
   };
 
+  const [ isVisibleNav, setVisibleNav ] = useState(false);
+
   return (
     <Container>
-      <Nav>
-        <SiteName>
-          <Logo src={logo} width={24} />
-          <Link to="/">{data.site.siteMetadata.title}</Link>
-        </SiteName>
+      <Header>
+        <Logo width={24} height={24} color={'#663399'} style={{ marginRight: 8 }} onClick={_ => {
+          setVisibleNav(!isVisibleNav);
+        }} />
+        <Link to="/">{data.site.siteMetadata.title}</Link>
+      </Header>
+      <Nav isVisible={isVisibleNav}>
         { PageList(indexTree) }
       </Nav>
       <Main>
