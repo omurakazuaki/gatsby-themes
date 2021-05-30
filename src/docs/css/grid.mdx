@@ -4,302 +4,59 @@ title: Grid
 
 ## grid-template-rows
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid;grid-template-rows: 150px 1fr 300px 1fr">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid;grid-template-rows: 150px 1fr 300px 1fr">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Grid grid-template-rows" src="https://codepen.io/omurakazuaki/embed/NWpwNXa?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/NWpwNXa'>Grid grid-template-rows</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## grid-template-columns
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid;grid-template-columns: 150px 1fr;">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid;grid-template-columns: 150px 1fr;">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Grid grid-template-columns" src="https://codepen.io/omurakazuaki/embed/WNpXwdX?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/WNpXwdX'>Grid grid-template-columns</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## grid-row grid-column
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-rows: 70px 1fr; grid-template-columns: 100px 1fr 100px;">
-    <div style="grid-row: 1 / 2; grid-column: 1 / 4">header</div>
-    <div style="grid-row: 2 / 3; grid-column: 1 / 2">left</div>
-    <div style="grid-row: 2 / 3; grid-column: 2 / 3">content</div>
-    <div style="grid-row: 2 / 3; grid-column: 3 / 4">right</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-rows: 70px 1fr; grid-template-columns: 100px 1fr 100px;">
-  <div style="grid-row: 1 / 2; grid-column: 1 / 4">header</div>
-  <div style="grid-row: 2 / 3; grid-column: 1 / 2">left</div>
-  <div style="grid-row: 2 / 3; grid-column: 2 / 3">content</div>
-  <div style="grid-row: 2 / 3; grid-column: 3 / 4">right</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Grid grid-row/grid-column" src="https://codepen.io/omurakazuaki/embed/mdWqPXE?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/mdWqPXE'>Grid grid-row/grid-column</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## gap
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-rows: 70px 1fr; grid-template-columns: 100px 1fr 100px; gap: 10px;">
-    <div style="grid-row: 1 / 2; grid-column: 1 / 4">header</div>
-    <div style="grid-row: 2 / 3; grid-column: 1 / 2">left</div>
-    <div style="grid-row: 2 / 3; grid-column: 2 / 3">content</div>
-    <div style="grid-row: 2 / 3; grid-column: 3 / 4">right</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-rows: 70px 1fr; grid-template-columns: 100px 1fr 100px; gap: 10px;">
-  <div style="grid-row: 1 / 2; grid-column: 1 / 4">header</div>
-  <div style="grid-row: 2 / 3; grid-column: 1 / 2">left</div>
-  <div style="grid-row: 2 / 3; grid-column: 2 / 3">content</div>
-  <div style="grid-row: 2 / 3; grid-column: 3 / 4">right</div>
-</div>
-```
+<iframe height="265" style="width: 100%;" scrolling="no" title="Grid gap" src="https://codepen.io/omurakazuaki/embed/abJVNqx?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/abJVNqx'>Grid gap</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## justify-content
 
+<iframe height="265" style="width: 100%;" scrolling="no" title="Grid justify-content" src="https://codepen.io/omurakazuaki/embed/LYWONgE?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/omurakazuaki/pen/LYWONgE'>Grid justify-content</a> by Kazuaki Omura
+  (<a href='https://codepen.io/omurakazuaki'>@omurakazuaki</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ### start
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-columns: 50px 50px;justify-content: start">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-columns: 50px 50px;justify-content: start">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+アイテムを先頭に寄せる
 
 ### center
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-columns: 50px 50px;justify-content: center">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-columns: 50px 50px;justify-content: center">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+アイテムを中央に寄せる
 
 ### end
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-columns: 50px 50px;justify-content: end">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-columns: 50px 50px;justify-content: end">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+アイテムを末尾に寄せる
 
 ### space-between
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-columns: 50px 50px;justify-content: space-between">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-columns: 50px 50px;justify-content: space-between">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+各アイテムを均等に配置し最初のアイテムは先頭に寄せ、最後のアイテムは末尾に寄せる
 
 ### space-around
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-columns: 50px 50px;justify-content: space-around">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-columns: 50px 50px;justify-content: space-around">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+各アイテムを均等に配置し各アイテムの両側に半分の大きさの間隔を置く
 
 ### space-evenly
 
-<iframe style={{border: 'none', width: '100%', resize: 'both'}} srcdoc={`
-  <style>
-    body>div {
-      padding: 20px;
-    }
-    div>div {
-      background: #f6f5f5;
-      border: 1px solid #d3e0ea;
-      padding: 10px;
-      text-align: center;
-    }
-  </style>
-  <div style="display: grid; grid-template-columns: 50px 50px;justify-content: space-evenly">
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-  </div>`}/>
-
-```html
-<div style="display: grid; grid-template-columns: 50px 50px;justify-content: space-evenly">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-```
+各アイテムを均等に配置する

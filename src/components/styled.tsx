@@ -7,7 +7,7 @@ const Container = styled.div`
   grid-auto-flow: row;
   max-width: 1800px;
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100% 1fr;
   }
 `;
 
@@ -73,12 +73,12 @@ const Main = styled.div`
 
 const Content = styled.div`
   width: 75%;
-  max-width: 1024px;
+  max-width: 768px;
   margin: 32px auto;
   order: 1;
   @media screen and (max-width: 1024px) {
     width: inherit;
-    margin: 0 32px 32px;
+    margin: 0 16px 16px;
   }
 `;
 
@@ -93,7 +93,7 @@ const Index = styled.aside`
     position: relative;
     order: 0;
     height: 100%;
-    margin: 32px;
+    margin: 16px;
     border-bottom: 1px solid;
     border-color: #b0b0bb;
   }
