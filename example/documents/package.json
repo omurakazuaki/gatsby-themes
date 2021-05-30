@@ -1,12 +1,12 @@
 {
   "private": true,
-  "name": "gatsby-themes",
+  "name": "documents-example",
   "version": "1.0.0",
-  "description": "A simple documents site with Gatsby",
-  "main": "index.js",
+  "description": "A gatsby-theme-documents sample",
+  "main": "gatsby-config.js",
   "scripts": {
-    "start": "yarn workspace documents-example develop",
-    "build": "yarn workspace documents-example build"
+    "develop": "gatsby develop",
+    "build": "gatsby build"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
     "url": "https://github.com/omurakazuaki/gatsby-themes/issues"
   },
   "homepage": "https://github.com/omurakazuaki/gatsby-themes#readme",
-  "workspaces": ["gatsby-theme-documents", "example/*"]
+  "dependencies": {
+    "gatsby": "^3.6.1",
+    "gatsby-theme-documents": "./gatsby-theme-documents"
+  }
 }
