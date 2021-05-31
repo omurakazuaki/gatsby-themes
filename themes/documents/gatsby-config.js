@@ -8,14 +8,21 @@ module.exports = {
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
-        path: `docs/`,
+        path: `contents/docs/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `contents/`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          docs: require.resolve(`${__dirname}/src/templates/doc.tsx`),
+          docs: require.resolve(`${__dirname}/src/templates/docs.tsx`),
+          default: require.resolve(`${__dirname}/src/templates/default.tsx`),
         },
       },
     },
@@ -23,7 +30,22 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `docs`,
-        path: `docs/`,
+        path: `contents/docs/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `contents/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `index`,
+        path: `contents/`,
+        ignore: [`**/\.*`],
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -39,7 +61,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `contents/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
