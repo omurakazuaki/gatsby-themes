@@ -6364,7 +6364,7 @@ gatsby-telemetry@^2.6.0:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-theme-documents@./gatsby-theme-documents:
+gatsby-theme-documents@./themes/documents:
   version "0.1.0"
   dependencies:
     "@mdx-js/mdx" "^1.6.22"

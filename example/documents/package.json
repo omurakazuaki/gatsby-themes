@@ -23,6 +23,6 @@
   "homepage": "https://github.com/omurakazuaki/gatsby-themes#readme",
   "dependencies": {
     "gatsby": "^3.6.1",
-    "gatsby-theme-documents": "./gatsby-theme-documents"
+    "gatsby-theme-documents": "./themes/documents"
   }
 }
