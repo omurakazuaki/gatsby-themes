@@ -19,6 +19,7 @@ const Header = styled.h1`
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   background-color: rgb(242, 242, 250);
+  box-shadow: 0 0.8rem 0.8rem rgb(0 0 0 / 15%);
   color: #663399;
   font-size: 20px;
   font-weight: 900;
@@ -46,6 +47,7 @@ const Nav = styled.aside`
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   background-color: rgb(242, 242, 250);
+  box-shadow: 0 0.8rem 0.8rem rgb(0 0 0 / 15%);
   padding-left: 32px;
   @media screen and (max-width: 768px) {
     position: fixed;
@@ -93,7 +95,8 @@ const Index = styled.aside`
     position: relative;
     order: 0;
     height: 100%;
-    margin: 16px;
+    margin: 0;
+    padding: 16px;
     border-bottom: 1px solid;
     border-color: #b0b0bb;
   }

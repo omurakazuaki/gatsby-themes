@@ -54,11 +54,12 @@ const Navigator = ({isVisible} : {isVisible: boolean}) => {
           <Link to={node.slug}
             style={{
               display: 'flex',
-              padding: 8
+              padding: '8px 0 8px 8px',
             }}
             activeStyle={{
               color: '#663399',
-              backgroundColor: '#fff'
+              backgroundColor: 'rgb(255 255 255 / 50%)',
+              boxShadow: '0 .8rem .8rem rgb(0 0 0 / 10%)'
             }}
           >
           {node.title}
