@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Container maxWidth="md">
-        <div>{children}</div>
+        <div style={{padding: 24}}>{children}</div>
         <footer
           style={{
             marginTop: `2rem`,

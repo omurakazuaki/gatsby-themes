@@ -1,5 +1,8 @@
-body {
-  color: #2A2F33;
-  background: #f3f4f3;
+body, h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
