@@ -46,8 +46,8 @@ const Header = ({ siteTitle }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static">
-        <Container maxWidth="md">
+      <AppBar position="sticky">
+        <Container maxWidth="lg">
           <Toolbar>
             <Hidden only={['md', 'lg', 'xl']}>
               <IconButton edge="start" color="inherit" aria-label="menu">

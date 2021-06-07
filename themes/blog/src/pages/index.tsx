@@ -1,29 +1,53 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
+import { graphql, Link } from "gatsby"
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+} from '@material-ui/core';
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = props => (
   <Layout>
     <Seo title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["auto", "webp", "avif"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
+    <List>
+      {
+        props.data.allMdx.edges.map(({node}) => (
+        <>
+          <Link to={node.fields.slug} key={node.fields.slug}>
+            <ListItem>
+              <ListItemText primary={node.frontmatter.title} />
+            </ListItem>
+          </Link>
+          <Divider />
+        </>
+        ))
+      }
+    </List>
   </Layout>
 )
+
+export const pageQuery =
+  graphql`{
+    allMdx(
+      filter: {
+        fileAbsolutePath: {glob: "**/articles/**"}
+      }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }`;
 
 export default IndexPage
