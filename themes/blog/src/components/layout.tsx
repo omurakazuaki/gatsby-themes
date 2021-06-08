@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import '@fontsource/roboto';
 import { ThemeProvider, createMuiTheme, Container } from "@material-ui/core"
 
 const theme = createMuiTheme({
@@ -40,17 +41,8 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <Container maxWidth="lg">
-        <div style={{padding: 24}}>{children}</div>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <Container maxWidth="md">
+        <div style={{paddingTop: 96}}>{children}</div>
       </Container>
     </ThemeProvider>
   )

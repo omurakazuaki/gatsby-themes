@@ -6,8 +6,8 @@ import {
   Grid,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
+  Typography
 } from '@material-ui/core';
 import Layout from '../components/layout';
 import Seo from '../components/seo';
@@ -19,8 +19,10 @@ export default function Articles({children, pageContext}) {
     .filter(e => ['h2', 'h3'].includes(e.props.mdxType))
     .map((e, i) => (
       <Link to={`#${e.props.children}`}>
-        <ListItem>
-          <ListItemText primary={e.props.children} />
+        <ListItem button>
+          <ListItemText style={{
+            paddingLeft: e.props.mdxType == 'h2' ? 0 : 8
+          }} primary={e.props.children} />
         </ListItem>
       </Link>
     ));
@@ -38,11 +40,16 @@ export default function Articles({children, pageContext}) {
     <Layout>
       <Seo title={pageContext.frontmatter.title} />
       <Grid container spacing={3}>
-        <Grid item xs={12} md={9}>
+        <Grid component="article" item xs={12} md={9}>
           <h1>{pageContext.frontmatter.title}</h1>
           <MDXProvider components={components}>{children}</MDXProvider>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid component="nav" style={{
+            position: 'sticky',
+            height: 'calc(100vh - 84px)',
+            top: 84
+          }} item xs={12} md={3}>
+          <Typography variant="subtitle1">Index</Typography>
           <List>
             {navItems}
           </List>
